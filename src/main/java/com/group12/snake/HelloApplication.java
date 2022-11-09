@@ -10,10 +10,14 @@ public class HelloApplication extends Application {
 
     public static Stage stage;
 
+    public static void main(String[] args) {
+        launch();
+    }
+
     @Override
     public void start(Stage stage) {
 
-        Game game = new Game();
+        Game game = new Game(this);
 
         HelloApplication.stage = stage;
         stage.setTitle("Snake");
@@ -27,10 +31,6 @@ public class HelloApplication extends Application {
         stage.show();
         game.start();
 
-    }
-
-    public static void main(String[] args) {
-        launch();
     }
 
 }

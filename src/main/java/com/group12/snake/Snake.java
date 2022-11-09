@@ -5,10 +5,10 @@ import java.util.ArrayList;
 public class Snake {
 
     public final Head head;
-    private ArrayList<Square> tail;
+    private final ArrayList<Square> tail;
 
     public Snake() {
-        this.head = new Head(0,0);
+        this.head = new Head(0, 0);
         this.tail = new ArrayList<>();
     }
 
@@ -22,6 +22,7 @@ public class Snake {
     public ArrayList<Square> getTail() {
         return this.tail;
     }
+
     public int getSize() {
         return this.tail.size();
     }

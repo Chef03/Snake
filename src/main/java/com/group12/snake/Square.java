@@ -2,13 +2,14 @@ package com.group12.snake;
 
 import javafx.scene.paint.Color;
 
+import java.util.Objects;
+
 public class Square {
 
+    static final int length = 30;
+    private final Color color;
     private int x;
     private int y;
-    private final Color color;
-
-    static final int length = 20;
 
     public Square(int x, int y) {
         this.x = x;
@@ -23,16 +24,15 @@ public class Square {
     }
 
     public void updateX(int x) {
-
-            this.x = x;
-
+        this.x = x;
     }
 
     public void updateY(int y) {
 
-            this.y = y;
+        this.y = y;
 
     }
+
     public int getX() {
         return this.x;
     }
@@ -45,4 +45,16 @@ public class Square {
         return this.color;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Square square = (Square) o;
+        return x == square.x && y == square.y;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
+    }
 }
